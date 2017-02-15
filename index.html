@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rangeslider</title>
+    <script src="rangeslider.js"></script>
+  </head>
+  <body>
+  <div id="sliderDiv"></div>
+  <div id="sliderVals" style="padding:20px;font-size:0.5em"></div>
+  <script language="javascript">
+    var slider = initSlider("sliderDiv");
+    slider.onchange = function(){
+      var start = Math.round(slider.rangeStart*100)/100;
+      var end = Math.round(slider.rangeEnd*100)/100;
+      document.getElementById("sliderVals").innerText = "Range: "+start+" - "+end;
+    };
+  </script>
+
+  </body>
+</html>
