@@ -5,8 +5,8 @@ function isFunction(x) {
 
 function initSlider(divId){
   var sl = {
-    backStyle: "background:white; border: solid 1px #C5C5C5",
-    rangeStyle: "background: #E9E9E9; border: solid 1px #DDD",
+    backStyle: "background:white; border: solid 1px #BBB",
+    rangeStyle: "background: #E9E9E9; border: solid 1px #BBB; cursor: ew-resize;",
     buttonStyle: "background: #F6F6F6; border: solid 1px #C5C5C5; border-radius: 0.2em",
 
     height: "1em",
@@ -52,17 +52,18 @@ function initSlider(divId){
       }
 
       sl.button1.style.position = "absolute";
-      sl.button1.style.margin="0px";
       sl.button1.style.width  = sl.buttonSz+"px";
       sl.button1.style.height = sl.buttonSz+"px";
       sl.button1.style.top = ((height-sl.buttonSz)/2)+"px";
       sl.button1.style.left = (rangeStartPos - sl.buttonSz - sl.buttonOffset)+"px";
+      sl.button1.style.cursor = "w-resize";
 
       sl.button2.style.position = "absolute";
       sl.button2.style.width  = sl.buttonSz+"px";
       sl.button2.style.height = sl.buttonSz+"px";
       sl.button2.style.top = ((height-sl.buttonSz)/2)+"px";
       sl.button2.style.left = (rangeEndPos+sl.buttonOffset)+"px";
+      sl.button2.style.cursor = "e-resize";
 
       if( isFunction(sl.onchange) ){
         sl.onchange();
